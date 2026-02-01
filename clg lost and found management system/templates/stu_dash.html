@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT DASHBOARD</title>
+    <link href="/static/style.css" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-store">
+</head>
+<body>
+    <body class="studash-page">
+    <div class="main3">
+        <div class="h1"> <div class="welcome">Welcome {{user}}👋</div>
+            
+            <div class="logoutt">
+                <a href="{{ url_for('logout') }}">
+                    <button class="b4">LOG OUT</button>
+                </a>
+
+            </div>
+            </div>
+        <div class="r002">
+            <div class="cards-container1">
+                <div class="card1">
+                    <div class="icon1">📦</div>
+                    <h3>VIEW FOUND ITEMS</h3>
+                    <p>See items that have been found on campus</p>
+                    <a href="/view_found" class="card-btn1">VIEW</a>
+                </div>
+                <div class="card1">
+                    <div class="icon1">🔍</div>
+                    <h3>VIEW LOST ITEMS</h3>
+                    <p>Check items that you have reported as lost</p>
+                    <a href="/view_lost" class="card-btn1">VIEW</a>
+                </div>
+                <div class="card2">
+                    <div class="icon1">📝</div>
+                    <h3>REPORT LOST ITEMS</h3>
+                    <p>Report a new lost item</p>
+                    <a href="/report_lost" class="card-btn1">REPORT</a>
+                </div>
+                <div class="card2">
+                    <div class="icon1">📝</div>
+                    <h3>REPORT FOUND ITEMS</h3>
+                    <p>Report a new Found item</p>
+                    <a href="/report_found" class="card-btn1">REPORT</a>
+                </div>
+                {% if session.is_admin %}
+                <div class="card1">
+                    <div class="icon1">🧑‍💼</div>
+                    <h3>ADMIN DASHBOARD</h3>
+                    <p>Manage all lost & found items</p>
+                    <a href="/admin_dashboard" class="card-btn1">OPEN</a>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

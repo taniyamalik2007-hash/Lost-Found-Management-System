@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+    <form method="post" action="/login">
+        <div class="main">
+            <div class="heading">WELCOME
+            </div>
+            <div class="name">
+                <input class="n1" type="text" name="name" placeholder="Enter Your Name"/>
+            </div>
+            <div class="email">
+                <input class="n1" type="email" name="email" placeholder="Enter Your Email"/>
+            </div>
+            <div class="pass">
+                <input class="n1" type="password" name="password" placeholder="Enter Your Password"/>
+            </div>
+            <div class="logorsign">
+                <div class="log">
+                    <button class="b1" type="submit" name="login">LOG IN</button>
+                </div>
+                <div class="sign">NEW USER? <a class="link" href="/signup">SIGN UP</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+

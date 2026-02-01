@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navv">
+    <a href="/dashboard" class="back-btn">← Back to Dashboard</a>
+    <h2 class="page-title">🧑‍💼 Admin Dashboard</h2>
+</div>
+
+<div class="container">
+    <body class="found-page">
+
+    <h3>🔍 Lost Items</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Contact</th>
+            <th>Reported By</th>
+            <th>Action</th>
+        </tr>
+
+        {% for item in lost_items %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+            <td>{{ item[4] }}</td>
+            <td>{{ item[5] }}</td>
+            <td>{{ item[6] }}</td>
+            <td>
+                <a href="/delete_lost/{{ item[0] }}" class="del-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br><br>
+
+    <h3>📦 Found Items</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Contact</th>
+            <th>Reported By</th>
+            <th>Action</th>
+        </tr>
+
+        {% for item in found_items %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+            <td>{{ item[4] }}</td>
+            <td>{{ item[5] }}</td>
+            <td>{{ item[6] }}</td>
+            <td>
+                <a href="/delete_found/{{ item[0] }}" class="del-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>
